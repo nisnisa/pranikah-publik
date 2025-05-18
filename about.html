@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Pranikah</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --navy: #1B2B3A;
+            --cream: #FFF5E9;
+            --gold: #D4AF37;
+            --text-dark: #1B2B3A;
+            --about-hero-bg: url('img/heroilustrasi.png'); /* Ganti dengan gambar hero kamu */
+            --about-desc-bg: #F4511E;
+        }
+        body {
+            background-color: var(--cream);
+            font-family: 'Georgia', serif;
+            color: var(--text-dark);
+        }
+        .navbar {
+            background-color: var(--navy) !important;
+            padding: 0;
+        }
+        .logo {
+            height: 60px;
+            margin-right: 20px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+            filter: brightness(1.2);
+        }
+        .navbar-brand {
+            padding: 0;
+            margin: 0;
+        }
+        .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+            padding: 0.5rem 1.5rem !important;
+        }
+        .about-hero {
+            background: var(--about-hero-bg) center center/cover no-repeat;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(27,43,58,0.45);
+            z-index: 1;
+        }
+        .about-hero-title {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-size: 3.2rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.1;
+            max-width: 900px;
+        }
+        .about-desc-section {
+            background: var(--cream);
+            color: var(--text-dark);
+            padding: 3rem 0 2.5rem 0;
+            text-align: center;
+        }
+        .about-desc-section .container {
+            max-width: 900px;
+        }
+        .footer {
+            background-color: var(--navy);
+            padding: 1.5rem 0 1rem;
+            color: white;
+        }
+        .footer-title {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Georgia', serif;
+            text-align: center;
+        }
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+        }
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+        }
+        .footer-contact i {
+            color: var(--gold);
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .footer-links {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        .footer-contact a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        .footer-contact a:hover {
+            color: var(--gold);
+        }
+        .about-programs-section {
+            background: var(--cream);
+            padding: 3rem 0 3.5rem 0;
+        }
+        .about-programs-title {
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Georgia', serif;
+            color: var(--text-dark);
+            margin-bottom: 2.5rem;
+            font-weight: bold;
+        }
+        .about-program-card {
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 16px rgba(27,43,58,0.08);
+            padding: 0;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .about-program-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 24px rgba(27,43,58,0.13);
+        }
+        .about-program-card .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(27,43,58,0.45);
+            z-index: 1;
+        }
+        .about-program-label {
+            position: relative;
+            z-index: 2;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0;
+            font-family: 'Georgia', serif;
+            width: 100%;
+            text-align: center;
+        }
+        @media (max-width: 767px) {
+            .about-program-card {
+                height: 120px;
+            }
+            .about-program-label {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/Pranikah.png" alt="Pranikah Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="contact-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-hero">
+        <h1 class="about-hero-title">Tentang Kami</h1>
+    </section>
+    <section class="about-desc-section">
+        <div class="container">
+            <p>Kami hadir untuk membantu pasangan mempersiapkan diri menghadapi kehidupan pernikahan dengan bijaksana dan matang. Melalui berbagai program edukasi seperti webinar, kelas intensif, dan sesi konseling, kami memberikan pemahaman mendalam tentang berbagai aspek penting dalam hubungan, termasuk komunikasi, keuangan, psikologi pasangan, serta nilai-nilai keluarga.</p>
+            <p>Kami percaya bahwa pernikahan yang sehat dan harmonis dimulai dari persiapan yang matang. Oleh karena itu, tujuan kami adalah memberikan bekal pengetahuan dan keterampilan kepada pasangan agar mereka dapat menghadapi tantangan pernikahan dengan lebih percaya diri dan lebih siap. Kami juga bertujuan untuk meminimalkan dampak negatif yang sering kali terjadi akibat ketidaksiapan dalam pernikahan.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="about-programs-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <a href="program.html" class="text-decoration-none">
+                        <div class="about-program-card h-100" style="background-image:url('img/webinar.png')">
+                            <div class="overlay"></div>
+                            <div class="about-program-label">Webinar</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <a href="program.html" class="text-decoration-none">
+                        <div class="about-program-card h-100" style="background-image:url('img/kelasintensif.png')">
+                            <div class="overlay"></div>
+                            <div class="about-program-label">Kelas Intensif</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="program.html" class="text-decoration-none">
+                        <div class="about-program-card h-100" style="background-image:url('img/konsultasipribadi.png')">
+                            <div class="overlay"></div>
+                            <div class="about-program-label">Konsultasi Pribadi</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <h3 class="footer-title">Kontak</h3>
+            <ul class="footer-contact">
+                <li>
+                    <i class="bi bi-envelope"></i>
+                    <a href="mailto:info@pranikah.id">info@pranikah.id</a>
+                </li>
+                <li>
+                    <i class="bi bi-whatsapp"></i>
+                    <a href="https://wa.me/your-number">08xx-xxxx-xxxx</a>
+                </li>
+                <li>
+                    <i class="bi bi-instagram"></i>
+                    <a href="https://instagram.com/pranikah.id">@pranikah.id</a>
+                </li>
+            </ul>
+            <div class="footer-links">
+                <a href="#">Kebijakan Privasi</a>
+                <a href="#">FAQ</a>
+                <a href="#">Kerja Sama</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Coming Soon Modal -->
+    <div class="modal fade" id="comingSoonModal" tabindex="-1" aria-labelledby="comingSoonModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="comingSoonModalLabel">Coming Soon</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            Fitur ini akan segera hadir!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Intercept Programs and Contact link clicks to show the modal
+      document.getElementById('programs-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        var modal = new bootstrap.Modal(document.getElementById('comingSoonModal'));
+        modal.show();
+      });
+      document.getElementById('contact-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        var modal = new bootstrap.Modal(document.getElementById('comingSoonModal'));
+        modal.show();
+      });
+    </script>
+</body>
+</html> 
