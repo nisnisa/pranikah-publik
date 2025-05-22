@@ -3,456 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranikah - Pre-Marriage Event</title>
+    <title>The Ultimate Guide to Your Healthy Marriage</title>
+    <link rel="icon" type="image/png" href="img/Pranikah-4.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #1B2B3A;
-            --cream: #FFF5E9;
-            --gold: #D4AF37;
-            --text-dark: #1B2B3A;
+            --cream: #f8f5f1;
+            --soft-gold: #e5d3b3;
+            --text-dark: #2d2d2d;
+            --accent: #e5d3b3;
+            --white: #fff;
         }
-        
         body {
-            background-color: var(--cream);
+            background: var(--cream);
             font-family: 'Georgia', serif;
             color: var(--text-dark);
         }
-
         .navbar {
-            background-color: var(--navy) !important;
-            padding: 0;
+            background: var(--white);
+            border-bottom: 1px solid #eee;
+            font-family: 'Georgia', serif;
         }
-
-        .logo {
-            height: 60px;
-            margin-right: 20px;
-        }
-
-        .logo img {
-            height: 100%;
-            width: auto;
-            filter: brightness(1.2);
-        }
-
-        .navbar-brand {
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-link {
-            color: white !important;
+        .navbar-nav .nav-link {
+            color: var(--text-dark) !important;
             font-size: 1.1rem;
-            padding: 0.5rem 1.5rem !important;
+            margin: 0 1.2rem;
+            font-weight: 500;
         }
-
+        .navbar-nav .nav-link:hover {
+            color: #bfa76a !important;
+        }
         .hero-section {
-            padding: 3.5rem 0;
-            min-height: 0;
+            position: relative;
+            min-height: 650px;
+            width: 100%;
+            background: url('img/bighero.png') center center/cover no-repeat !important;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
-        .hero-section .container {
-            max-width: 900px;
-            margin: 0 auto;
+        .hero-section .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255,255,255,0.2);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3.5rem 1rem;
+        }
+        .hero-title-box {
+            background-color: rgba(27, 43, 58, 0.4);
+            padding: 0.8rem 1.5rem;
+            display: inline-block;
+            margin-bottom: 2rem;
         }
         .hero-title {
-            font-size: 4rem;
-            color: var(--text-dark);
+            font-size: 3.2rem;
+            font-family: 'Cinzel Decorative', serif;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0;
+            text-shadow: none;
+        }
+        .hero-btn {
+            background: #fff;
+            color: #2d2d2d;
+            border: 1.5px solid #2d2d2d;
+            padding: 0.8rem 2.5rem;
+            font-size: 1.15rem;
+            border-radius: 0;
             font-family: 'Georgia', serif;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
         }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-dark);
-            line-height: 1.6;
+        .hero-btn:hover {
+            background: #f8f5f1;
+            color: #2d2d2d;
+            border-color: #bfa76a;
+        }
+        .section {
+            padding: 3.5rem 0 2.5rem;
+        }
+        .article-card {
+            background: var(--white);
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             margin-bottom: 2rem;
-            max-width: 600px;
         }
-
-        .btn-primary {
-            background-color: var(--gold);
-            border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
-            margin-right: 1rem;
+        .article-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+        .article-meta {
+            font-size: 0.9rem;
+            color: #bfa76a;
+            margin-bottom: 0.3rem;
+            font-family: 'Georgia', serif;
+        }
+        .article-title {
+            font-size: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
             color: var(--text-dark);
-            transition: all 0.3s ease;
         }
-
-        .btn-primary:hover {
-            background-color: #C19B2E;
-            color: var(--text-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: var(--navy);
-            border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background-color: #2C3E50;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .about-section {
+        .real-weddings-section {
             padding: 5rem 0;
             background-color: #FFF;
         }
-
-        .about-title {
+        .real-wedding-title {
             font-size: 3rem;
+            font-family: 'Cormorant Garamond', serif;
             color: var(--text-dark);
-            margin-bottom: 2rem;
-            font-family: 'Georgia', serif;
-            text-align: center;
+            margin-bottom: 1.5rem;
+            text-align: left;
         }
-
-        .about-text {
+        .real-wedding-text {
             font-size: 1.2rem;
             line-height: 1.8;
             color: var(--text-dark);
             max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .programs-section {
-            padding: 5rem 0;
-        }
-
-        .programs-title {
-            font-size: 3rem;
-            color: var(--text-dark);
-            margin-bottom: 3rem;
-            text-align: center;
+            margin: 0 0 2rem 0;
             font-family: 'Georgia', serif;
+            text-align: left;
         }
-
-        .program-card {
-            background-color: #FFF;
-            padding: 2.5rem 2rem;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 2rem;
+        .register-btn {
+            background: var(--accent);
+            border: 1px solid var(--text-dark);
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            color: var(--text-dark);
             transition: all 0.3s ease;
-            height: 100%;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
-        .program-icon {
-            color: var(--gold);
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .program-title {
-            color: var(--text-dark);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
             font-family: 'Georgia', serif;
+            display: inline-block;
         }
-
-        .program-description {
+        .register-btn:hover {
+            background: var(--gold);
             color: var(--text-dark);
+            border-color: #bfa76a;
+            transform: none;
+        }
+        .features-section {
+            background: var(--cream);
+            padding: 2rem 0 1.5rem;
+        }
+        .feature-icon {
+            font-size: 2.2rem;
+            color: #bfa76a;
+            margin-bottom: 0.7rem;
+        }
+        .feature-label {
             font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .purpose-section {
-            padding: 5rem 0;
-            background-color: #FFF;
-        }
-
-        .purpose-title {
-            font-size: 3rem;
-            color: var(--text-dark);
-            margin-bottom: 2rem;
-            text-align: center;
             font-family: 'Georgia', serif;
+            color: var(--text-dark);
         }
-
-        .purpose-quote {
+        .subscribe-section {
+            background: var(--white);
+            padding: 2rem 0 2.5rem;
+            text-align: center;
+        }
+        .subscribe-title {
             font-size: 1.5rem;
-            line-height: 1.6;
-            color: var(--text-dark);
-            font-style: italic;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            padding: 2rem 3rem;
-        }
-
-        .purpose-quote::before,
-        .purpose-quote::after {
-            content: '"';
-            font-size: 4rem;
-            color: var(--gold);
-            position: absolute;
-            opacity: 0.3;
-        }
-
-        .purpose-quote::before {
-            left: 0;
-            top: 0;
-        }
-
-        .purpose-quote::after {
-            right: 0;
-            bottom: -1rem;
-        }
-
-        .illustration-wrapper {
-            background-color: var(--cream);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1.5rem;
-            border-radius: 1.5rem;
-            max-width: 900px;
-            width: 100%;
-            margin: 0 auto;
-        }
-        .illustration {
-            max-width: 100%;
-            height: auto;
-            mix-blend-mode: multiply;
-            object-fit: contain;
-        }
-
-        .footer {
-            background-color: var(--navy);
-            padding: 2.5rem 0 1.5rem;
-            color: white;
-        }
-
-        .footer-title {
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
             font-family: 'Georgia', serif;
-            text-align: center;
+            margin-bottom: 1rem;
         }
-
-        .footer-contact {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .footer-contact li {
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-contact i {
-            color: var(--gold);
+        .subscribe-form input[type="email"] {
+            border-radius: 0;
+            border: 1px solid #ccc;
+            padding: 0.7rem 1.2rem;
+            font-size: 1rem;
+            width: 260px;
             margin-right: 0.5rem;
-            font-size: 1.1rem;
         }
-
-        .footer-links {
-            text-align: center;
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        .subscribe-form button {
+            background: var(--accent);
+            color: var(--text-dark);
+            border: none;
+            border-radius: 0;
+            padding: 0.7rem 1.5rem;
+            font-family: 'Georgia', serif;
         }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+        .subscribe-form button:hover {
+            background: #d4af37;
         }
-
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-
-        .footer-contact a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-contact a:hover {
-            color: var(--gold);
+        @media (max-width: 991px) {
+            .hero-title { font-size: 2.1rem; }
+            .hero-section { min-height: 420px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="Pranikah.png" alt="Pranikah Logo" class="logo">
+                <img src="img/Pranikahrmvpjg.png" alt="Pranikah Logo" style="max-height: 80px; width: auto; display: block;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="home-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html" id="about-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="programs.html">Programs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="contact-link">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="programs.html">PROGRAMS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-title-box">
+                <h1 class="hero-title">The Ultimate Guide<br>to Your Healthy Marriage</h1>
+            </div>
+            <a href="#" class="btn hero-btn">READ MORE</a>
+        </div>
+    </section>
+    <!-- Articles Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card article-card">
+                        <img src="img/webinar2.png" class="article-img" alt="Webinar">
+                        <div class="card-body">
+                            <div class="article-meta">WEBINAR</div>
+                            <div class="article-title">Topik-Topik Dasar Dalam Hubungan Dan Kesiapan Menikah</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card article-card">
+                        <img src="img/intensiveclass.png" class="article-img" alt="Intensive Class">
+                        <div class="card-body">
+                            <div class="article-meta">INTENSIVE CLASS</div>
+                            <div class="article-title">Materi Mendalam, Interaktif, Dan Didampingi Mentor Berpengalaman</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card article-card">
+                        <img src="img/coupleconsult.png" class="article-img" alt="Couple Consultation">
+                        <div class="card-body">
+                            <div class="article-meta">KONSULTASI</div>
+                            <div class="article-title">Sesi One-on-One Bersama Konselor Profesional Membahas Kesiapan Emosional Dan Mental</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Real Weddings Section -->
+    <section class="real-weddings-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="hero-title">Siap Menikah dengan Bijak</h1>
-                    <p class="hero-subtitle">Persiapan pernikahan bukan hanya tentang pesta, tapi tentang membangun masa depan bersama yang sehat dan harmonis.</p>
-                    <div class="d-flex">
-                        <a href="programs.html" class="btn btn-primary">Daftar Sekarang</a>
-                        <a href="programs.html" class="btn btn-secondary">Lihat Program</a>
-                    </div>
+                <div class="col-md-8">
+                    <h2 class="real-wedding-title">Kenapa Harus Siap Menikah?</h2>
+                    <p class="real-wedding-text">Menikah bukan sekadar soal cinta atau pesta, tapi tentang kesiapan mental, emosional, komunikasi, dan tanggung jawab jangka panjang. Tanpa kesiapan, pernikahan bisa menjadi sumber konflik alih-alih kebahagiaan. Karena itu, penting untuk memahami dan mempersiapkan diri sebelum melangkah, agar pernikahan bukan hanya sah secara hukum, tapi juga sehat secara emosional dan berkelanjutan.</p>
                 </div>
-                <div class="col-lg-6 col-12 mt-4 mt-lg-0 d-flex justify-content-lg-end justify-content-center">
-                    <div class="illustration-wrapper w-100">
-                        <img src="heroilustrasi.png" alt="Hero Illustration" class="illustration">
-                    </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="btn register-btn">Siapkan Mulai Sekarang!</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section class="about-section">
+    <!-- Features Section -->
+    <section class="features-section">
         <div class="container">
-            <h2 class="about-title">Tentang Kami</h2>
-            <p class="about-text">Kami adalah platform edukasi pranikah yang hadir untuk membantu pasangan mempersiapkan diri menghadapi kehidupan pernikahan. Melalui webinar, kelas intensif, dan sesi konseling, kami membekali peserta dengan pemahaman mendalam seputar komunikasi, keuangan, psikologi pasangan, dan nilai-nilai keluarga.</p>
-        </div>
-    </section>
-
-    <!-- Featured Programs -->
-    <section class="programs-section">
-        <div class="container">
-            <h2 class="programs-title">Program Unggulan</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="program-card">
-                        <i class="bi bi-camera-video program-icon"></i>
-                        <h3 class="program-title">Ikuti Webinar</h3>
-                        <p class="program-description">Sesi daring gratis setiap bulan yang membahas topik-topik dasar dalam hubungan dan kesiapan menikah.</p>
-                    </div>
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="feature-icon"><i class="bi bi-clipboard-check"></i></div>
+                    <div class="feature-label">Checklist</div>
                 </div>
-                <div class="col-md-4">
-                    <div class="program-card">
-                        <i class="bi bi-book program-icon"></i>
-                        <h3 class="program-title">Kelas Intensif</h3>
-                        <p class="program-description">Program berbayar dengan materi mendalam, interaktif, dan didampingi mentor berpengalaman.</p>
-                    </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="feature-icon"><i class="bi bi-currency-dollar"></i></div>
+                    <div class="feature-label">Budget Calculator</div>
                 </div>
-                <div class="col-md-4">
-                    <div class="program-card">
-                        <i class="bi bi-chat-dots program-icon"></i>
-                        <h3 class="program-title">Konsultasi Pribadi</h3>
-                        <p class="program-description">Sesi one-on-one bersama konselor profesional untuk membahas kesiapan emosional dan mental sebelum menikah.</p>
-                    </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
+                    <div class="feature-label">Timeline</div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="feature-icon"><i class="bi bi-envelope"></i></div>
+                    <div class="feature-label">Newsletter</div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Purpose Section -->
-    <section class="purpose-section">
-        <div class="container">
-            <h2 class="purpose-title">Kenapa Harus Siap Menikah?</h2>
-            <p class="purpose-quote">Pernikahan yang sukses dimulai dari persiapan yang matang. Kami membantu Anda mengenali pasangan, memahami diri sendiri, dan membangun pondasi hubungan yang sehat.</p>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" style="background-color: #101A24; padding: 1.5rem 0; text-align: center;">
         <div class="container">
-            <h3 class="footer-title">Kontak</h3>
-            <ul class="footer-contact">
-                <li>
-                    <i class="bi bi-envelope"></i>
-                    <a href="mailto:info@pranikah.id">info@pranikah.id</a>
-                </li>
-                <li>
-                    <i class="bi bi-whatsapp"></i>
-                    <a href="https://wa.me/your-number">08xx-xxxx-xxxx</a>
-                </li>
-                <li>
-                    <i class="bi bi-instagram"></i>
-                    <a href="https://instagram.com/pranikah.id">@pranikah.id</a>
-                </li>
-            </ul>
             <div class="footer-links">
-                <a href="#">Kebijakan Privasi</a>
-                <a href="#">FAQ</a>
-                <a href="#">Kerja Sama</a>
+                <a href="#" style="color: white; text-decoration: none; margin: 0 1rem; font-size: 0.9rem; transition: color 0.3s ease;">Kebijakan Privasi</a>
+                <a href="#" style="color: white; text-decoration: none; margin: 0 1rem; font-size: 0.9rem; transition: color 0.3s ease;">FAQ</a>
+                <a href="#" style="color: white; text-decoration: none; margin: 0 1rem; font-size: 0.9rem; transition: color 0.3s ease;">Kerja Sama</a>
             </div>
         </div>
     </footer>
-
-    <!-- Coming Soon Modal -->
-    <div class="modal fade" id="comingSoonModal" tabindex="-1" aria-labelledby="comingSoonModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="comingSoonModalLabel">Coming Soon</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center">
-            Fitur ini akan segera hadir!
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Intercept Home, Programs and Contact link clicks to show the modal
-      document.getElementById('home-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        var modal = new bootstrap.Modal(document.getElementById('comingSoonModal'));
-        modal.show();
-      });
-      document.getElementById('contact-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        var modal = new bootstrap.Modal(document.getElementById('comingSoonModal'));
-        modal.show();
-      });
-    </script>
 </body>
 </html> 
